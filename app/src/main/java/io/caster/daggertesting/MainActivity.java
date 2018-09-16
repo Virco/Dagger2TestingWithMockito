@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         ((DemoApplication)getApplication()).getComponent().inject(this);
 
-        final TextView currentForecast = (TextView) findViewById(R.id.current_forecast);
+        final TextView currentForecast = findViewById(R.id.current_forecast);
 
         new AsyncTask<Void, Void, Forecast>() {
 
@@ -36,6 +36,5 @@ public class MainActivity extends AppCompatActivity {
                 currentForecast.setText(forecast.getCurrently().getIcon());
             }
         }.execute();
-
     }
 }
